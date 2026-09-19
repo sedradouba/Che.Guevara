@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#171816">
+	<meta name="description" content="اكتشف الملابس الرياضية والإكسسوارات المختارة من Ghe.Guevara.">
+	<title>Ghe.Guevara | تجهيزك يبدأ من هنا</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<!-- شريط الإعلان أعلى المتجر -->
+	<div class="announcement">شحن مجاني للطلبات التي تزيد عن ٢٥٠ ر.س <span>·</span> تسوق مجموعتنا الجديدة الآن</div>
+
+	<!-- الهيدر الثابت: الهوية، البحث، والتنقل والسلة -->
+	<header class="site-header">
+		<div class="header-main page-shell">
+			<a class="brand" href="#home" aria-label="Ghe.Guevara - الصفحة الرئيسية">
+				<!-- علامة رسومية أحادية اللون بديلة عن صورة اللوجو -->
+				<span class="brand-mark" aria-hidden="true">
+					<svg viewBox="0 0 48 48" role="img">
+						<circle cx="24" cy="24" r="23" fill="#171816"/>
+						<path d="M15 31c1-5 4-8 9-8s8 3 9 8M18 18c0-4 2-7 6-7s6 3 6 7c0 4-2 7-6 7s-6-3-6-7Z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+						<path d="M13 15h6M29 15h6M19 34h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</span>
+				<span class="brand-name">Ghe<span>.</span>Guevara</span>
+			</a>
+
+			<form class="search" id="search-form" role="search">
+				<label class="visually-hidden" for="search-input">ابحث عن منتج</label>
+				<input id="search-input" type="search" placeholder="ابحث عن منتجك المفضل..." autocomplete="off">
+				<button type="submit" aria-label="بحث">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+				</button>
+			</form>
+
+			<div class="header-actions">
+				<button class="header-link favorites-link" id="wishlist-open" type="button" aria-label="فتح قائمة المفضلة" aria-controls="wishlist-drawer" aria-expanded="false">
+					<span class="wishlist-icon-wrap">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5-8.8 10-8.8 10s-8.8-5-8.8-10A4.8 4.8 0 0 1 12 6.5a4.8 4.8 0 0 1 8.8 2.3Z"/></svg>
+						<span class="wishlist-badge" id="wishlist-count">0</span>
+					</span>
+					<span class="action-label">المفضلة</span>
+				</button>
+				<button class="cart-trigger" id="cart-open" type="button" aria-label="فتح سلة التسوق" aria-controls="cart-drawer" aria-expanded="false">
+					<span class="cart-icon-wrap">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+						<span class="cart-badge" id="cart-count">0</span>
+					</span>
+					<span class="action-label">السلة</span>
+				</button>
+				<button class="theme-toggle" id="theme-toggle" type="button" aria-label="التبديل إلى الوضع الداكن" title="تبديل الثيم">
+					<svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+					<svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg>
+				</button>
+				<button class="mobile-menu" id="mobile-menu" type="button" aria-label="فتح قائمة الأقسام" aria-expanded="false">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+				</button>
+			</div>
+		</div>
+
+		<!-- روابط التنقل تستخدم نفس فلاتر المنتجات -->
+		<nav class="category-nav" id="category-nav" aria-label="أقسام المتجر">
+			<div class="page-shell nav-inner">
+				<a href="#products" class="nav-category is-active" data-category="all">كل المنتجات</a>
+				<a href="#products" class="nav-category" data-category="clothing">ملابس رياضية</a>
+				<a href="#products" class="nav-category" data-category="caps">طواقي</a>
+				<a href="#products" class="nav-category" data-category="bags">شنط</a>
+				<a href="#products" class="nav-category" data-category="accessories">إكسسوارات</a>
+				<a href="#about" class="nav-about">قصتنا</a>
+			</div>
+		</nav>
+	</header>
+
+	<main id="home">
+		<!-- واجهة ترحيبية بمظهر تحريري بسيط -->
+		<section class="hero page-shell" aria-labelledby="hero-title">
+			<div class="hero-copy">
+				<p class="eyebrow"><span></span> صُممت للحركة</p>
+				<h1 id="hero-title">تحرّك بحرية.<br><span>كن على طبيعتك.</span></h1>
+				<p class="hero-description">قطع أساسية تجمع بين الراحة والأداء، لترافقك في التمرين وكل يوم.</p>
+				<a class="button button-dark" href="#products">اكتشف المجموعة <span aria-hidden="true">←</span></a>
+				<div class="hero-note"><span class="note-line"></span> أساسيات تدوم، بلا تعقيد.</div>
+			</div>
+			<div class="hero-visual" role="img" aria-label="رياضي يرتدي ملابس رياضية سوداء">
+				<div class="hero-image"></div>
+				<div class="hero-stamp"><span>MOVE</span><span>YOUR</span><span>WAY</span></div>
+				<div class="hero-image-caption">مجموعة الحركة <span>01 / 04</span></div>
+			</div>
+		</section>
+
+		<!-- مزايا الخدمة -->
+		<section class="benefits page-shell" aria-label="مزايا التسوق">
+			<div class="benefit"><span class="benefit-icon">01</span><div><strong>خامات مختارة</strong><span>راحة في كل حركة</span></div></div>
+			<div class="benefit"><span class="benefit-icon">02</span><div><strong>توصيل سريع</strong><span>لباب منزلك</span></div></div>
+			<div class="benefit"><span class="benefit-icon">03</span><div><strong>دفع آمن</strong><span>تسوق بثقة تامة</span></div></div>
+		</section>
+
+		<!-- فلاتر أقسام المنتجات والمنتجات التي يرسمها JavaScript -->
+		<section class="products-section page-shell" id="products" aria-labelledby="products-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">اختياراتنا لك</p>
+					<h2 id="products-title">أساسياتك، <span>بأسلوبك.</span></h2>
+				</div>
+				<p class="results-count" id="results-count" aria-live="polite"></p>
+			</div>
+			<div class="filter-row" role="group" aria-label="تصفية المنتجات حسب القسم">
+				<button class="filter-button is-active" type="button" data-category="all" aria-pressed="true">الكل</button>
+				<button class="filter-button" type="button" data-category="clothing" aria-pressed="false">ملابس رياضية</button>
+				<button class="filter-button" type="button" data-category="caps" aria-pressed="false">طواقي</button>
+				<button class="filter-button" type="button" data-category="bags" aria-pressed="false">شنط</button>
+				<button class="filter-button" type="button" data-category="accessories" aria-pressed="false">إكسسوارات</button>
+			</div>
+			<div class="product-grid" id="product-grid" aria-live="polite"></div>
+			<p class="empty-results" id="empty-results" hidden>ما لقينا منتجات تطابق بحثك. جرّب كلمة ثانية.</p>
+		</section>
+
+		<!-- تعريف موجز بالمتجر -->
+		<section class="about-strip" id="about">
+			<div class="page-shell about-inner">
+				<span class="about-mark" aria-hidden="true">G.</span>
+				<div><p class="eyebrow">أقل، لكن أفضل</p><h2>اختر القطع التي <span>تتحرك معك.</span></h2></div>
+				<p>Ghe.Guevara مساحة لأساسيات يومية عملية، بتصميم واضح وجودة تستحق أن تعود إليها.</p>
+			</div>
+		</section>
+	</main>
+
+	<!-- تذييل الموقع -->
+	<footer class="site-footer">
+		<div class="page-shell footer-inner">
+			<a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#fff"/><path d="M15 31c1-5 4-8 9-8s8 3 9 8M18 18c0-4 2-7 6-7s6 3 6 7c0 4-2 7-6 7s-6-3-6-7Z" fill="none" stroke="#171816" stroke-width="2.5" stroke-linecap="round"/><path d="M13 15h6M29 15h6M19 34h10" stroke="#171816" stroke-width="2" stroke-linecap="round"/></svg></span><span class="brand-name">Ghe<span>.</span>Guevara</span></a>
+			<p>أساسيات الحركة، مصممة للحياة اليومية.</p>
+			<span class="copyright">© <span id="year"></span> Ghe.Guevara</span>
+		</div>
+	</footer>
+
+	<!-- طبقة التعتيم ودرج السلة الجانبي -->
+	<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+	<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+		<div class="drawer-header">
+			<div><p class="eyebrow">تسوقك بانتظارك</p><h2 id="cart-title">سلة التسوق <span id="drawer-count">(0)</span></h2></div>
+			<button class="icon-button" id="cart-close" type="button" aria-label="إغلاق السلة"><span aria-hidden="true">×</span></button>
+		</div>
+		<div class="cart-items" id="cart-items"></div>
+		<div class="cart-empty" id="cart-empty"><span aria-hidden="true">🛍</span><h3>سلتك فارغة حالياً</h3><p>أضف قطعة تحبها، ونجهزها لك.</p><button class="button button-dark" id="continue-shopping" type="button">اكتشف المنتجات</button></div>
+		<div class="drawer-footer" id="drawer-footer" hidden>
+			<div class="subtotal-row"><span>الإجمالي الفرعي</span><strong id="cart-total">0 ر.س</strong></div>
+			<p>تُحسب رسوم الشحن عند إتمام الطلب.</p>
+			<button class="button button-dark checkout-button" id="checkout-button" type="button">متابعة التسوق بأمان <span aria-hidden="true">←</span></button>
+		</div>
+	</aside>
+	<!-- لوحة المنتجات المحفوظة في المفضلة -->
+	<aside class="cart-drawer wishlist-drawer" id="wishlist-drawer" role="dialog" aria-modal="true" aria-labelledby="wishlist-title" aria-hidden="true" inert>
+		<div class="drawer-header">
+			<div><p class="eyebrow">قطع اخترتها بنفسك</p><h2 id="wishlist-title">قائمة المفضلة <span id="wishlist-drawer-count">(0)</span></h2></div>
+			<button class="icon-button" id="wishlist-close" type="button" aria-label="إغلاق قائمة المفضلة"><span aria-hidden="true">×</span></button>
+		</div>
+		<div class="wishlist-items" id="wishlist-items"></div>
+		<div class="cart-empty" id="wishlist-empty"><span aria-hidden="true">♡</span><h3>قائمتك فارغة حالياً</h3><p>احفظ المنتجات التي أعجبتك لتجدها هنا.</p><button class="button button-dark" id="wishlist-continue" type="button">تصفح المنتجات</button></div>
+	</aside>
+	<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+	<!-- نافذة تفاصيل المنتج؛ تُملأ بياناتها ديناميكياً عند اختيار بطاقة -->
+	<dialog class="product-modal" id="product-modal" aria-labelledby="modal-product-name">
+		<div class="modal-card">
+			<button class="icon-button modal-close" id="product-modal-close" type="button" aria-label="إغلاق تفاصيل المنتج"><span aria-hidden="true">×</span></button>
+			<div class="modal-image-wrap"><img id="modal-product-image" src="" alt=""></div>
+			<div class="modal-product-info">
+				<p class="eyebrow" id="modal-product-category"></p>
+				<h2 id="modal-product-name"></h2>
+				<p class="modal-description" id="modal-product-description"></p>
+				<strong class="modal-price" id="modal-product-price"></strong>
+				<button class="button button-dark modal-add-button" id="modal-add-button" type="button">أضف للسلة <span aria-hidden="true">←</span></button>
+			</div>
+		</div>
+	</dialog>
+</body>
+</html>
